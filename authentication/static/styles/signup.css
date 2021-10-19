@@ -1,0 +1,46 @@
+.get__app{
+    width: 287px;
+}
+.social-btn .btn {
+    color: #fff;
+    margin: 10px 0;
+    font-size: 15px;
+    font-weight: normal;
+    border: none;
+    text-align: center;     
+}
+.social-btn .btn:hover {
+    opacity: 0.9;
+}
+.social-btn .btn-primary {
+    background: #507cc0;
+}
+
+.social-btn .btn-danger {
+    background: #df4930;
+}
+.social-btn .btn i {
+        margin-right: 9px;
+        font-size: 20px;
+        
+        
+        
+    }
+.signup__card{
+    width: 360px;
+}
+
+.signup__card__text{
+    color: rgba(var(--f52,142,142,142),1);
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+}
+
+.terms__conditions{
+    color: rgba(var(--f52,142,142,142),1);
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+}
