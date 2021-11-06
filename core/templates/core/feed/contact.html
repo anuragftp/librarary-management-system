@@ -16,11 +16,11 @@
             <form  method='post'>
                 {% csrf_token %}
                 <div class="d-flex">
-                  <div class="mb-3 col-6">
+                  <div class="mb-3 col-4">
                       <label for="name" >UserId : {{request.user.id}}</label>
                       
                   </div>
-                  <div class="mb-3 col-6 ">
+                  <div class="mb-3 col-8 ">
                       <label for="name" class="float-end">Email: {{request.user.email}}</label>
                       <input id="name" type="hidden" name="email" placeholder="Email" class="form-control {% if form.email.errors %}is-invalid{% endif %} " value="{{ request.user.email }}">
                                     <div class="invalid-feedback">
