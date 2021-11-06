@@ -7,3 +7,9 @@ class HomeView(View):
 
 	def get(self,request):
 		return render(request,self.template_name)
+
+class UserHomeView(View):
+	template_name='core/feed/feed3.html'
+
+	def get(self,request):
+		return render(request,self.template_name)

@@ -1,150 +1,6 @@
-{% load static %}
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrapmin4.css'%}"></li>
-
-    <title>Hello, world!</title>
-  </head>
-  <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="{% url 'homepage' %}">
-                    <img alt="Brand" style="max-width:42px;" src=" {% static 'image/llb12.jpg' %}">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav mr-auto">
-                        
-                            <li><a class="nav-link" href="{% url 'homepage' %}">Home</a></li>
-                            <li><a class="nav-link" href="/">About us</a></li>
-                            <li><a class="nav-link" href="/">New Arrivals</a></li>
-                            
-                            <li><a class="nav-link" href="/">Book Issue</a></li>
-                           
-                       
-                            <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      Login
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                      <a class="dropdown-item" data-toggle="modal" data-target="#stuloginModal" href="#">Student Login</a>
-                                      <a class="dropdown-item" data-toggle="modal" data-target="#teachloginModal" href="#">Teacher Login</a>
-                                      <a class="dropdown-item"    href="/admin">Admin Login</a>
-                                     
-                                      <a class="dropdown-item" href="{% url 'homepage' %}">Home</a>
-                                      <div class="dropdown-divider"></div>
-                                     
-                                    </div>
-                                  </li>
-                        <li><a class="nav-link" href="/">Contact me</a></li>
-                    </ul>
-                    <span class="navbar-text mr-4">
-                        <div class="form-inline">
-                        <form  method="get" action="search.jsp" >
-                            <input name="query" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-danger my-2 my-sm-0 ml-2" type="submit">Search</button>
-                            
-                        </form>
-                    
-    
-    
-                        </div>
-                    </span>
-                     <a href="/admin" class="btn btn-danger my-2 my-sm-0 ml-2" >Admin Login</a>
-                    
-                    
-                </div>
-              </nav>
-               
-            <!-- student Login Modal -->
-        <div class="modal fade" id="stuloginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                      <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Student Login Here</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                          </button>
-                      </div>
-                      <div class="modal-body">
-                          <form action="stud.jsp" method='post'>
-                                <div class="form-group">
-                                        <label for="lusername">Libid</label>
-                                        <input type="text" class="form-control" id="lusername" placeholder="Enter your Libid" name="libid">
-                                    </div>
-                              <div class="form-group">
-                                  <label for="lusername">Username</label>
-                                  <input type="text" class="form-control" id="lusername" placeholder="Enter your username" name="lusername">
-                              </div>
-                              <div class="form-group">
-                                  <label for="lpassword">Password</label>
-                                  <input type="password" class="form-control" id="lpassword" placeholder="Enter your password" name="lpassword">
-                              </div>
-                              
-                             
-                                
-                                <button type="submit" class="btn btn-outline-primary " id="loginsubmit">Login</button></form>
-                                <form action="forget1.jsp" method='post'>
-                                   <div class="float-right">
-                                <button type="submit"  class="btn btn-outline-primary " >Forgot password</button>
-                                    </div>
-                          </form>
-                      </div>
-                      <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      </div>
-                  </div>
-              </div>
-          </div>  
-           
-            <!-- teacher Login Modal -->
-        <div class="modal fade" id="teachloginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                      <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Teacher Login Here</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                          </button>
-                      </div>
-                      <div class="modal-body">
-                          <form action="teacherchecklogin.jsp" method='post'>
-                                <div class="form-group">
-                                        <label for="lusername">Teacher Id</label>
-                                        <input type="text" class="form-control" id="lusername" placeholder="Enter your id" name="tid">
-                                    </div>
-                              <div class="form-group">
-                                  <label for="lusername">Username</label>
-                                  <input type="text" class="form-control" id="lusername" placeholder="Enter your username" name="lusername">
-                              </div>
-                              <div class="form-group">
-                                  <label for="lpassword">Password</label>
-                                  <input type="password" class="form-control" id="lpassword" placeholder="Enter your password" name="lpassword">
-                              </div>
-                              
-                              <button type="submit" class="btn btn-outline-primary " id="loginsubmit">Login</button></form>
-                                <form action="forget2.jsp" method='post'>
-                                   <div class="float-right">
-                                <button type="submit"  class="btn btn-outline-primary " >Forgot password</button>
-                                    </div>
-                          </form>
-                      </div>
-                      <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      </div>
-                  </div>
-              </div>
-          </div>  
-    
-    
-           
+    {% extends 'core/base.html'%}
+    {% load static %}
+         {% block content %}      
               <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -179,71 +35,103 @@
                   </div>
 
                 <!--    container -->
+                <div class="container mt-3 px-4" id="aboutus">
+                 <h1 class="text-center">Library Management System</h1>
+                 <hr>
+                  <p class="text-justify ">
+                        A Library Management System is a software built to handle the primary housekeeping functions of a library. Libraries rely on library management systems to manage asset collections as well as relationships with their members. Library management systems help libraries keep track of the books and their checkouts, as well as members , subscriptions and profiles.
+
+                        Library management systems also involve maintaining the database for entering new books and recording books that have been borrowed with their respective due dates.
+
+                       <br> Library Management System is a software used to manages the catalog of a library.  This helps to keep the records of whole transactions of the books available in the library.
+
+                        EOS provides Library Management System which is very easy to use and fulfills all the requirement of a librarian. There are many features which helps librarian to keep records of available books as well as issued books. This software is available in both mode i.e. web-based or local host based.  We provide best Library Management System of this planet.
+                        
+                        
+                        <br>
+                        <br>Here is a list of some features of Library Management System which EOS offer:<br>
+                        </p>
+                        <div class="container">
+                        <ul >
+                        <li>Keep record of different categories like; Books, Journals, Newspapers, Magazines, etc.
+                        <li> Classify the books subject wise.</li>
+                        <li>Easy way to enter new books.</li>
+                        <li>Keep record of complete information of a book like; Book name, Author name, Publisher’s name, Date/ Year of publication, Cost of the book, Book purchasing date/ Bill no.</li>
+                        <li>Easy way to make a check-out.</li>
+                        <li> Easy way to make a check-in.</li>
+                        <li> Automatic fine calculation for late returns.</li>
+                        <li> Different criteria for searching a book.</li>
+                        <li> Different kind of reports like; total no. of books, no. of issued books, no. of journals, etc.</li>
+                        <li>Easy way to know how many books are issued to a particular student.</li>
+                        <li> Easy way to know the status of a book.</li>
+                        <li> Event calendar for librarian to remember their dates.</li>
+                        <li>My Notes section for librarian to write any note.</li>
+                        <li>Online access for registered user to see the status of their books.</li>
+                        <li>Completely cloud based Library Management System.</li>
+                        <li> No need to invest heavily on Hardware.</li>
+                        <li>SAAS based pricing.</li>
+                        and much more.
+                        </li></ul>
+                      </div>
+                </div>
                   <div class="container ">
-                        <div class="row">
+                        <div class="row my-4 mb-2">
                           
                           <div class="card mx-auto col-lg-3 my-2" style="width: 18rem;">
                             <a href="/"><img src="{% static 'image/suggestion.jpg' %}" height="140px" class="card-img-top mt-2" alt="..."></a>
-                                <div class="card-body">
-                                <h5 class="card-title">Suggestion</h5>
-                                <p class="card-text">It is the psychological process by which one person guides the thoughts or behavior of another person.</p>
-                                <a href="/" class="btn btn-outline-primary">Suggestion.</a>
+                                <div class="card-body text-center">
+                                <h5 class="card-title ">Suggestion</h5>
+                                <p class="card-text text-justify">It is the psychological process by which one person guides the thoughts or behavior of another person.</p>
+                                <a href="/" class="btn btn-outline-primary ">Suggestion.</a>
                                 </div>
                               </div>
                               <div class="card mx-auto col-lg-3 my-2" style="width: 18rem;">
                                     <a href="/"><img src="{% static 'image/account.jpg' %}"  height="140px" class="card-img-top mt-2"  alt="..."></a>
-                                    <div class="card-body">
-                                    <h5 class="card-title">Account</h5>
-                                    <p class="card-text">Account that is required for access, authentication and authorization to certain online.</p>
-                                    <a href="/" class="btn btn-outline-primary">create account</a>
+                                    <div class="card-body text-center">
+                                    <h5 class="card-title ">Account</h5>
+                                    <p class="card-text text-justify">Account that is required for access, authentication and authorization to certain online.</p>
+                                    <a href="{% url 'signup_view' %}" class="btn btn-outline-primary">SignUp</a>
                                     </div>
                                   </div>
                                   <div class="card mx-auto col-lg-3 my-2" style="width: 18rem;">
                                     <a href="/"> <img src="{% static 'image/request.jpg' %}"  height="140px" class="card-img-top mt-2" data-toggle="modal" data-target="#booksearch" alt="..."></a>
-                                        <div class="card-body">
-                                        <h5 class="card-title">Book Request</h5>
-                                        <p class="card-text">Running a library , Handle book requests and  juggling is just one of the many tasks librarians,.</p>
+                                        <div class="card-body text-center">
+                                        <h5 class="card-title ">Book Request</h5>
+                                        <p class="card-text text-justify">Running a library , Handle book requests and  juggling is just one of the many tasks librarians,.</p>
                                         <a href="/" class="btn btn-outline-primary ">Book Request</a>
                                         </div>
                                       </div>
                         </div>
                         
-                    </div>
-                    <div class="container ">
+                   
                         <div class="row">
                           
                           <div class="card  col-lg-3 mx-auto my-2" style="width: 18rem;">
                                 <img src="{% static 'image/onli.jpg' %}" height="140px" class="card-img-top mt-2" alt="...">
-                                <div class="card-body">
-                                <h5 class="card-title">Online Books</h5>
-                                <p class="card-text">An online book is a resource in book-like form that is only available to read on the Internet.</p>
-                                <a href="#" class="btn btn-outline-primary">continue reading ...</a>
+                                <div class="card-body text-center">
+                                <h5 class="card-title ">Online Books</h5>
+                                <p class="card-text text-justify">An online book is a resource in book-like form that is only available to read on the Internet.</p>
+                                <a href="https://www.goodreads.com/shelf/show/free-online" class="btn btn-outline-primary">continue reading ...</a>
                                 </div>
                               </div>
                               <div class="card  col-lg-3 mx-auto my-2" style="width: 18rem;">
                                    <img src="{% static 'image/erepos.jpg' %}"  height="140px" class="card-img-top mt-2"  alt="...">
-                                    <div class="card-body">
-                                    <h5 class="card-title">E-repository</h5>
-                                    <p class="card-text">School of Engineering Library has a collection of 600 cds and 2800 online journals and also student can download .</p>
+                                    <div class="card-body text-center">
+                                    <h5 class="card-title ">E-repository</h5>
+                                    <p class="card-text text-justify">School of Engineering Library has a collection of 600 cds and 2800 online journals and also student can download .</p>
                                     <a href="#" class="btn btn-outline-primary">continue reading ...</a>
                                     </div>
                                   </div>
                                   <div class="card  col-lg-3 mx-auto my-2" style="width: 18rem;">
                                         <img src="{% static 'image/collbooks.jpg' %}"  height="140px" class="card-img-top mt-2" alt="...">
-                                        <div class="card-body">
-                                        <h5 class="card-title">Collection of Books</h5>
-                                        <p class="card-text">School of Engineering Library has a collection of over 25000 books related to various subjects in engineering</p>
+                                        <div class="card-body text-center">
+                                        <h5 class="card-title ">Collection of Books</h5>
+                                        <p class="card-text text-justify">School of Engineering Library has a collection of over 25000 books related to various subjects in engineering</p>
                                         <a href="#" class="btn btn-outline-primary ">continue reading ...</a>
                                         </div>
                                       </div>
                         </div>
                         
                     </div>
-                  <button type="button" class="btn btn-secondary btn-lg btn-block ">Copyright &copy; 2019 - All Rights Reserved for EOS LIBRARY-</button>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
-</html>
+  
+{% endblock%}

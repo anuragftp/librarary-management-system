@@ -26,8 +26,7 @@ class SignInView(View):
 
 	def get(self,request,*args,**kwargs):
 		if request.user.is_authenticated:
-			pass
-			# return redirect('home_feed')
+			return redirect('user_feed_view')
 		return render(request,self.template_name)
 		
 	
@@ -48,7 +47,7 @@ class SignInView(View):
 			messages.error(request,"Invalid Login ",extra_tags="error")
 			return render(request,self.template_name)
 		login(request,user)
-		# return redirect('home_feed')
+		return redirect('user_feed_view')
 
 
 
@@ -58,8 +57,7 @@ class SignUpView(View):
 
 	def get(self,request,*args,**kwargs):
 		if request.user.is_authenticated:
-			pass
-			# return redirect('home_feed')
+			return redirect('user_feed_view')
 		return render(request,self.template_name)
 
 	def post(self,request,*args,**kwargs):
@@ -76,7 +74,7 @@ class SignUpView(View):
 class SignOutView(View):
 	def post(self,request,*args,**kwargs):
 		logout(request)
-		# return redirect('home_view')
+		return redirect('homepage')
 
 class PRView(PasswordResetView):
 	template_name='authentication/password_reset.html'
