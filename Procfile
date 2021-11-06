@@ -1,1 +1,1 @@
-web: gunicorn BloodDonation.wsgi
+web: gunicorn lbm.wsgi
