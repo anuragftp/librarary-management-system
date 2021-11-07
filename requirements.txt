@@ -1,6 +1,7 @@
 asgiref==3.4.1
 Django==3.2.8
 django-crum==0.7.9
+django-jazzmin==2.4.8
 gunicorn==20.1.0
 Pillow==8.4.0
 psycopg2==2.9.1
